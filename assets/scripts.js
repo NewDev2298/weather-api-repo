@@ -1,3 +1,5 @@
+var apiKey = '6f697439403e6464a7966d48364fc0f5'
+
 // We want to capture the USER INPUT
 // --> GRAB reference to the FORM or INPUT element (from HTML)
 // --> ELEMENT.addEventListener('event'), callback function (what happens when the user clicks the BUTTON?) 
@@ -19,26 +21,37 @@ fetch(url)   // kick off our REQUEST
     .then()
 */
 
-fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => {
-        console.log("Response: ", response);
-        return response.json()
-      })  // parseing the data (JSON)
-      .then(data => {
-          console.log("Data: ", data)  // this should be a JS OBJECT
-          console.log(typeof data);
+fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${apiKey}`)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+//       .then(response => {
+//         console.log("Response: ", response);
+//         return response.json()
+//       })  // parseing the data (JSON)
+//       .then(data => {
+//           console.log("Data: ", data)  // this should be a JS OBJECT
+//           console.log(typeof data);
           
-        // 2.) Dig into the RESPONSE DATA (object/array/{})
-        let userName = data[0].name;
-        console.log(userName);
+//         // 2.) Dig into the RESPONSE DATA (object/array/{})
+//         let userName = data[0].name;
+//         console.log(userName);
 
-        // callAnotherFunction(data)
+//         // callAnotherFunction(data)
 
-        // IF WE NEED THE DATA from the first request to make a SECOND REQUEST - IN THE (CALLBACK) FUNCTION SCOPE
+//         // IF WE NEED THE DATA from the first request to make a SECOND REQUEST - IN THE (CALLBACK) FUNCTION SCOPE
 
-        // 3.) UPDATE THE VIEW / DOM with our returned data
-        // --> btn.textContent = data[0].name
-      });
+//         // 3.) UPDATE THE VIEW / DOM with our returned data
+//         // --> btn.textContent = data[0].name
+//       });
 
 console.log("I am code after our fetch request...")
 
