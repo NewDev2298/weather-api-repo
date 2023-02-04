@@ -21,7 +21,18 @@ fetch(url)   // kick off our REQUEST
     .then()
 */
 
-fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${apiKey}`)
+fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=35.22&lon=-80.84&appid=${apiKey}`)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+fetch(`http://api.openweathermap.org/geo/1.0/direct?q=Roanoke&limit=5&appid=${apiKey}`)
     .then(function (response) {
         return response.json();
     })
