@@ -7,13 +7,15 @@
 
 ## Description
 
-
+This application uses multiple OpenWeather APIs to create a 5 day forecast for any city a user searches for. The app runs on multiple frameworks including JS, CSS and HTML. The library Bootstrap was used to help style the front end of the site. 
 
 ## Visuals
 
 ## Author
 
-Terrance Smith
+Terrance Smith 
+
+GitHub: [NewDev2298](https://github.com/NewDev2298) 
 
 ## License
 * MIT License
